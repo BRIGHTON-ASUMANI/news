@@ -1,11 +1,36 @@
-from app import create_app
-from flask_script import Manager,Server
+import os
 
-# Creating app instance
-app = create_app('development')
+class Config:
+    '''
+    General configuration parent class
+    '''
+    NEWS_API_BASE_URL ='https://newsapi.org/v2/{}?apiKey={}&language=en'
+    NEWS_API_KEY = os.environ.get('NEWS_API_KEY')
+    SECRET_KEY = os.environ.get('SECRET_KEY')
 
-manager = Manager(app)
-manager.add_command('server',Server)
 
-if __name__ == '__main__':
-    manager.run()
+
+class ProdConfig(Config):
+    '''
+    Production  configuration child class
+
+    Args:
+        Config: The parent configuration class with General configuration settings
+    '''
+    pass
+
+
+class DevConfig(Config):
+    '''
+    Development  configuration child class
+
+    Args:
+        Config: The parent configuration class with General configuration settings
+    '''
+
+    DEBUG = True
+
+config_options = {
+'development':DevConfig,
+'production':ProdConfig
+}
