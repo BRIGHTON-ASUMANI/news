@@ -1,0 +1,32 @@
+
+{% macro displayArticlesList(article_list) %}
+
+    {% for article in article_list %}
+      <a href="{{article.url}}"> </a>
+      <a>
+        <img  src="{{article.urlToImage}}" class="img-responsive img-circle" width="436" height="436" >
+
+
+      <hr />
+  </a>
+      <a href="{{article.url}}">{{ article.title}}</a>
+      <hr />
+
+{% endfor %}
+
+{% endmacro %}
+
+
+{% macro displaySourcesList(source_list) %}
+    {% for source in source_list %}
+    <blockquote>
+        <cite>
+          <a href='/source/{{source.id}}'>
+            {{ source.name}}
+            </a>
+     </cite>
+   </blockquote>
+   <hr />
+    {% endfor %}
+    <div>
+{% endmacro %}
