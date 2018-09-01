@@ -1,49 +1,51 @@
 {% extends 'base.html'%}
 {% import 'macros.html' as macro %}
-
-
-<!DOCTYPE html>
-<html>
-
+  {% block content %}
         <meta  name="viewport" content ="width=device-width,initial-scale=1,user-scalable=yes" />
         {% if title %}
         <title> {{ title }}</title>
         {% else %}
         <title> news</title>
         {% endif %}
+        <style>
+        /* width */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        </style>
 
 
-    <body>
-      <div class="container-fluid">
-        <div class="row">
-    {% block content %}
-        <!-- articles -->
-
-
-            <hr size='30px'>
-
-              <div class="col-md-6">
-                <h3>Top headlines.</h3>
-                {{macro.displayArticlesList(articles)}}
-              </div>
 
               <!-- sources-->
+  <div class="row">
 
+                <blockquote>
                   <div>
                   <h3>click on any news soures of your choice below</h3>
                 </div>
                 <hr />
-            <div>
+            <div style='float:right;'>
 
+            </style>
                 {{macro.displaySourcesList(sources)}}
               </div>
-
+              </blockquote>
             </div>
-
+</div>
 
         {% endblock %}
-
-
-            </div>
-    </body>
-</html>
