@@ -2,13 +2,10 @@
 {% macro displayArticlesList(article_list) %}
 
     {% for article in article_list %}
-      <a>
-        <img  src="{{article.urlToImage}}" class="img-responsive img-circle" width="400" height="400" >
-
-
+      <a href="{{article.url}}">
+        <img  src="{{article.urlToImage}}" class="img-responsive img-circle" width="436" height="436" >
+      </a>
       <hr />
-  </a>
-      {{ article.description}}
       <a href="{{article.url}}">{{ article.title}}</a>
       <hr />
 
@@ -19,18 +16,11 @@
 
 {% macro displaySourcesList(source_list) %}
     {% for source in source_list %}
-    <blockquote>
-        <cite>
+
           <a href='/source/{{source.id}}'>
             {{ source.name}}
-            {{ source.country}}
-            {{ source.language}}
-            {{ source.description}}
-            {{ source.category}}
-
             </a>
-     </cite>
-   </blockquote>
+
    <hr />
     {% endfor %}
     <div>

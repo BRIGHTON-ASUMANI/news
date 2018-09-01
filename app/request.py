@@ -6,14 +6,12 @@ from .models import Articles,Sources
 api_key = None
 # Getting the source base url
 base_url = None
-#getting source category
-category_url = None
+
 
 def configure_request(app):
     global api_key,base_url
     api_key = app.config['NEWS_API_KEY']
     base_url = app.config['NEWS_API_BASE_URL']
-    category_url = app.config['CATEGORY_BASE_URL']
 
 def get_from_source(articles,source):
     '''
@@ -81,12 +79,12 @@ def process_articles(article_list):
     return article_results
 
 
-def get_from_sources(sources):
+def get_sources(sources):
     '''
     Function that gets the json response to our url request
     '''
     get_sources_url = base_url.format(sources,api_key)
-    # print(get_sources_url)
+    #print(get_sources_url)
     with urllib.request.urlopen(get_sources_url) as url:
         get_sources_data = url.read()
         get_sources_response = json.loads(get_sources_data)
@@ -99,6 +97,7 @@ def get_from_sources(sources):
 
 
     return source_results
+
 
 def process_sources(source_list):
     '''
@@ -124,48 +123,3 @@ def process_sources(source_list):
         source_results.append(source_object)
 
     return source_results
-
-
-def get_categories(category):
-    '''
-    Function that gets the json response to our url request
-    '''
-    get_categories_url = category_url.format(category,api_key)
-    # print(get_categories_url)
-    with urllib.request.urlopen(get_categories_url) as url:
-        get_categories_data = url.read()
-        get_categories_response = json.loads(get_categories_data)
-
-        categories_results = None
-
-        if get_categories_response['sources']:
-            categories_results_list = get_categories_response['sources']
-            categories_results = process_sources(categories_results_list)
-
-
-    return categories_results
-
-def process_sources(categories_list):
-    '''
-    Function  that processes the source result and transform them to a list of Objects
-
-    Args:
-        source_list: A list of dictionaries that contain source details
-
-    Returns :
-        source_results: A list of source objects
-    '''
-    categories_results = []
-    for categories in categories_list:
-        id = categories.get('id')
-        name = categories.get('name')
-        description = categories.get('description')
-        url = categories.get('url')
-        category = categories.get('category')
-        language = categories.get('language')
-        country = categories.get('country')
-
-        categories_object = Sources(id,name,description,url,category,language,country)
-        categories_results.append(source_object)
-
-    return categories_results
