@@ -9,11 +9,10 @@
 <div classs='row'>
     {% for article in article_list %}
 <div class="col-md-4" id='line'>
-<a href="{{article.url}}">{{ article.title}}</a>
-<a href="{{article.url}}">{{ article.author}}</a>
-        <img  src="{{article.urlToImage}}" class="img-responsive img-thumbnail ImageBorder" width="400" height="400" >
-  {{article.description}}
-  {{article.publishedAt}}
+<h1>{{ article.title}}</h1>
+<h1>{{ article.author}}</h1>
+        <img  src="{{article.urlToImage}}" class="img-responsive img-thumbnail ImageBorder" width="300" height="300" >
+
 
 
 
@@ -31,17 +30,16 @@
 <div class="container-fluid">
 <div classs='row'>
     {% for source in source_list %}
-<div class="col-md-4" id='line'>
+<div class="col-md-4" id='line'  style='margin: 3px;'>
 <div class='row'>
     <div class="thumbnail">
 
 <h1><font face="verdana" color="Red">{{ source.name}}</h1>
-<h1><font face="verdana" color="Red">{{ source.description}}</h1>
-<a href='{{ source.url}}'>
-<button type="button" class="btn btn-outline-info">visit site</button></a>
+ <h1><font face="verdana" color="Red">{{ source.description}}</h1> 
+<a href='{{ source.url}}'><button type="button" class="btn btn-outline-info">visit site</button></a>&nbsp; &nbsp;
 <a href="/source/{{source.id}}" ><button type="button" class="btn btn-outline-info">Top-headlines</button></a>
-<h1><font face="verdana" color="Red">{{ source.language}}</h1>
-<h1><font face="verdana" color="Red">{{ source.country}}</h1>
+<!-- <h1><font face="verdana" color="Red">{{ source.language}}</h1>
+<h1><font face="verdana" color="Red">{{ source.country}}</h1> -->
 
         <!-- <div class="btn-group toolTipgroup">
           <a class="btn" href="#" data-placement="top" data-original-title="do you like?"><i class="icon-thumbs-up"></i></a>
