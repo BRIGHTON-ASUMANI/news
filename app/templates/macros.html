@@ -1,8 +1,9 @@
 
-
+<body>
 <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}"></link>
-<h1 style='align:center;'>Top-headlines</h1>
+
 {% macro displayArticlesList(article_list) %}
+
 <div class="container-fluid">
 
 <div classs='row'>
@@ -10,7 +11,7 @@
 <div class="col-md-4" id='line'>
 <a href="{{article.url}}">{{ article.title}}</a>
 <a href="{{article.url}}">{{ article.author}}</a>
-        <img  src="{{article.urlToImage}}" class="img-responsive img-circle img-thumbnail" width="436" height="436" >
+        <img  src="{{article.urlToImage}}" class="img-responsive img-thumbnail img-thumbnail" width="400" height="400" >
   {{article.description}}
   {{article.publishedAt}}
 
@@ -36,7 +37,9 @@
 
 <h1><font face="verdana" color="Red">{{ source.name}}</h1>
 <h1><font face="verdana" color="Red">{{ source.description}}</h1>
-<h1><font face="verdana" color="Red"><a href='{{ source.url}}'>site</a></h1>
+<a href='{{ source.url}}'>
+<button type="button" class="btn btn-outline-info">visit site</button></a>
+<a href="/source/{{source.id}}" ><button type="button" class="btn btn-outline-info">Top-headlines</button></a>
 <h1><font face="verdana" color="Red">{{ source.language}}</h1>
 <h1><font face="verdana" color="Red">{{ source.country}}</h1>
 
@@ -45,7 +48,7 @@
           <a class="btn" href="#" data-placement="top" data-original-title="dont like?"><i class="icon-thumbs-down"></i></a>
         </div> -->
 
-      <h1><a href="/source/{{source.id}}" >Top-headlines</a></h1>
+
     </div>
 </div>
 
@@ -58,3 +61,5 @@
 
 
 {% endmacro %}
+
+</body>

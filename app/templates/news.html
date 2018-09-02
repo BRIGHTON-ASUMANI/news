@@ -6,11 +6,17 @@
         <title> {{ title }}</title>
         {% else %}
         <title> news</title>
-        {% endif %}
+      {% endif %}
 
-    
+<body>
+<div>
+<h1 style='align:center;'>Top-headlines</h1>
+</div>
+
     <div>
                 {{macro.displayArticlesList(articles)}}
 
 </div>
+
+</body>
 {% endblock %}

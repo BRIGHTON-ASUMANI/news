@@ -1,4 +1,4 @@
-from flask import render_template, redirect, url_for
+from flask import render_template
 from . import main
 from ..request import get_articles,get_sources,get_from_source
 
@@ -38,8 +38,3 @@ def news(news_id):
     View news page function that returns the news details page and its data
     '''
     return render_template('news.html',id = news_id)
-
-
-@main.route('/favicon.ico')
-def hello():
-    return redirect(url_for('static', filename='images/favicon.ico'), code=302)
