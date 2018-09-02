@@ -36,16 +36,16 @@
 
 <h1><font face="verdana" color="Red">{{ source.name}}</h1>
 <h1><font face="verdana" color="Red">{{ source.description}}</h1>
-<h1><font face="verdana" color="Red">{{ source.url}}</h1>
+<h1><font face="verdana" color="Red"><a href='{{ source.url}}'>site</a></h1>
 <h1><font face="verdana" color="Red">{{ source.language}}</h1>
 <h1><font face="verdana" color="Red">{{ source.country}}</h1>
 
-        <div class="btn-group toolTipgroup">
+        <!-- <div class="btn-group toolTipgroup">
           <a class="btn" href="#" data-placement="top" data-original-title="do you like?"><i class="icon-thumbs-up"></i></a>
           <a class="btn" href="#" data-placement="top" data-original-title="dont like?"><i class="icon-thumbs-down"></i></a>
-        </div>
+        </div> -->
 
-      <p><a href="/source/{{source.id}}" >Top-headlines</a></p>
+      <h1><a href="/source/{{source.id}}" >Top-headlines</a></h1>
     </div>
 </div>
 
