@@ -1,23 +1,25 @@
 {% extends 'base.html'%}
 {% import 'macros.html' as macro %}
-
-
+  {% block content %}
         <meta  name="viewport" content ="width=device-width,initial-scale=1,user-scalable=yes" />
         {% if title %}
         <title> {{ title }}</title>
         {% else %}
         <title> news</title>
         {% endif %}
-
-
-    {% block content %}
+        <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}"></link>
 
 
               <!-- sources-->
+  <div class="row">
 
 
+
+            </style>
                 {{macro.displaySourcesList(sources)}}
-
-
+              </div>
+              </blockquote>
+            </div>
+</div>
 
         {% endblock %}

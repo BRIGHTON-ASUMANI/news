@@ -1,20 +1,8 @@
+.thumbnail:hover {-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);}
 
-/* width */
-::-webkit-scrollbar {
-    width: 10px;
-}
+#bodySection .thumbnail{overflow:hidden;}
+#bodySection .thumbnail h3,  #bodySection .thumbnail h4, #bodySection .thumbnail h4 { margin:-4px -4px 4px; line-height:44px; }
 
-/* Track */
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: #888;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
+#line{
+    display: inline;
 }

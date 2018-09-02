@@ -7,22 +7,6 @@
         {% else %}
         <title> news</title>
         {% endif %}
-
-        <!-- articles -->
-
-            <blockquote>
-              <p style='font-size:60px;'>Welcome to news highlights.
-                We bring you the best news across the globe. </p>
-            </blockquote>
-
-            <hr size='30px'>
-
-              <div class="col-md-6">
-                <h3>Top headlines.<br />check the trending news below.
-                  <hr />
-                </h3>
+    
                 {{macro.displayArticlesList(articles)}}
-              </div>
-
-
 {% endblock %}

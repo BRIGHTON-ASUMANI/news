@@ -12,21 +12,21 @@ def index():
     # Getting articles and sources
 
     articles = get_articles('top-headlines')
-    print(get_articles)
+    # print(get_articles)
 
     sources = get_sources('sources')
-    print(get_sources)
+    # print(get_sources)
     title = 'news'
     return render_template('index.html', title = title,articles = articles,sources = sources)
 
 @main.route('/source/<src>')
 def source(src):
-    # articles = get_from_source('top-headlines',src)
+    articles = get_from_source('top-headlines',src)
     # print(get_articles)
-    # sources = get_sources('sources')
+    sources = get_sources('sources')
     # print(get_sources)
     title = 'news'
-    return render_template('index.html', title = title)
+    return render_template('news.html', title = title,articles = articles,sources = sources)
 
 
 
@@ -36,9 +36,4 @@ def news(news_id):
     '''
     View news page function that returns the news details page and its data
     '''
-    articles = get_from_source('top-headlines',src)
-    print(get_articles)
-    sources = get_sources('sources')
-    print(get_sources)
-
-    return render_template('news.html',id = news_id, title = title,articles = articles,sources = sources)
+    return render_template('news.html',id = news_id)
