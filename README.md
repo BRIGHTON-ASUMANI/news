@@ -8,7 +8,7 @@
 > A user is able to read the displayed headlines.
 > A user can also click any of the preferred choices of the sources e.g. ABC-NEWS,BBC SPORT, BBC NEWS etc.
 > The application helps one to read the top headlines of any sources selected
-> if one is not satisfied he can click on the >view site button to go to the main site
+> if one is not satisfied he can click on the ***view site*** button to go to the main site
 
 ***
 
@@ -38,7 +38,3 @@
   > **_d:_** displays your saved credentials account and its password
 
 ***
-
-## Here some images to elaborate how the application works
-![user sign up and login](/static/images/1.png)
-![account to store date](/images/2.png)
