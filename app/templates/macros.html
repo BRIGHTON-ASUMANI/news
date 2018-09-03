@@ -1,7 +1,7 @@
 
 <body>
-<link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}"></link>
-<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/cyborg/bootstrap.min.css" rel="stylesheet" integrity="sha384-4DAPMwiyOJv/C/LvTiUsW5ueiD7EsaAhwUKO0Llp+fWzT40XrmAbayhVP00bAJVa" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}"></link> -->
+
 {% macro displayArticlesList(article_list) %}
 
 <div class="container-fluid">
@@ -9,18 +9,15 @@
 <div classs='row'>
     {% for article in article_list %}
 <div class="col-md-4" id='line'>
-  <div class='row'>
-      <div class="thumbnail"  style='background-color: black;'>
-<u style='color:#87FF2A;'><h4 style='color:Red;'>{{ article.title}}</h4></u>
-</hr >
-      <img  src="{{article.urlToImage}}" class="img-responsive img-thumbnail ImageBorder" width="300" height="300" >
-<h4 color='#87FF2A'>{{ article.description}}</h4>
-<a href='{{ article.url}}'><button type="button" class="btn btn-outline-info">Read more</button></a>
-</br>
+<h3>{{ article.title}}</h3>
+<h3>{{ article.author}}</h3>
+        <img  src="{{article.urlToImage}}" class="img-responsive img-thumbnail ImageBorder" width="300" height="300" >
+<h2>{{ article.description}}</h2>
+<h2>{{ article.publishedAt}}</h2>
+<a href='{{ article.url}}'>&nbsp; &nbsp;<button type="button" class="btn btn-outline-info">Read more</button></a>
 
 
-</div>
-</div>
+
 </div>
 {% endfor %}
 </div>
@@ -31,21 +28,19 @@
 
 
 {% macro displaySourcesList(source_list) %}
-<div class="container-fluid"  >
+<div class="container-fluid">
 <div classs='row'>
     {% for source in source_list %}
 <div class="col-md-4" id='line'>
 <div class='row'>
-    <div class="thumbnail"  style='background-color: black;'>
+    <div class="thumbnail">
 
-<h1><font face="verdana" color="Red">{{ source.name}}</h1>
-</hr>
- <h3><font face="verdana" color="#87FF2A">{{ source.description}}</h3>
-<a href='{{ source.url}}'><button type="button" class="btn btn-outline-info" color="green">visit site</button></a>&nbsp; &nbsp;
-<a href="/source/{{source.id}}" ><button type="button" class="btn btn-outline-info" color="red">Top-headlines</button></a>
+<h1><font face="verdana" >{{ source.name}}</h1>
+ <h1><font face="verdana">{{ source.description}}</h1>
+<a href='{{ source.url}}'><button type="button" class="btn btn-outline-info">visit site</button></a>&nbsp; &nbsp;
+<a href="/source/{{source.id}}" ><button type="button" class="btn btn-outline-info">Top-headlines</button></a>
 <!-- <h1><font face="verdana" color="Red">{{ source.language}}</h1>
 <h1><font face="verdana" color="Red">{{ source.country}}</h1> -->
-
 
         <!-- <div class="btn-group toolTipgroup">
           <a class="btn" href="#" data-placement="top" data-original-title="do you like?"><i class="icon-thumbs-up"></i></a>

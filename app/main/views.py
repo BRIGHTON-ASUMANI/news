@@ -1,6 +1,6 @@
 from flask import render_template
 from . import main
-from ..request import get_articles,get_sources,get_from_source
+from ..request import get_articles,get_sources,get_from_source,get_categories
 
 
 @main.route('/')
@@ -15,10 +15,16 @@ def index():
     articles = get_articles('top-headlines')
     # print(get_articles)
 
-    sources = get_sources('sources')
+    # sources = get_sources('sources')
+    business = get_categories('business')
+    general = get_categories('general')
+    health = get_categories('health')
+    sports = get_categories('sports')
+    technology = get_categories('technology')
+    science = get_categories('science')
     # print(get_sources)
     title = 'news'
-    return render_template('index.html', title = title,articles = articles,sources = sources)
+    return render_template('index.html', title = title,articles = articles,sports = sports,business = business,general = general,health = health, ports = sports,technology = technology,science = science)
 
 @main.route('/source/<src>')
 def source(src):
