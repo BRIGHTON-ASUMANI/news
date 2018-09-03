@@ -7,7 +7,10 @@
         {% else %}
         <title> news</title>
         {% endif %}
-        <!-- <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}"></link> -->
+         <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}"></link>
+
+
+
 
               <!-- sources-->
   <div class="container-fluid">
@@ -26,10 +29,7 @@
 
 <h1 class='font-family'>Health</h1>
         {{macro.displaySourcesList(health)}}
-
-
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
 </div>
-
 <script src="{{url_for('static',filename='js/logic.js')}}"></script>
-
         {% endblock %}
