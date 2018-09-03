@@ -19,3 +19,10 @@ body {
     border-color: Black;
     border: solid;
 }
+
+.border{
+
+outline-style: double;
+color:#87FF2A;
+
+}
