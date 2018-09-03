@@ -1,3 +1,4 @@
+<header class="intro-header" style="background-image: url({{ url_for('static', filename='images/back.jpeg') }})">
 <div class="navbar navbar-inverse" role="navigation">
        <div class="container-fluid">
            <div class="navbar-header">
@@ -8,7 +9,7 @@
                  <span class="icon-bar"></span>
                </button>
                <a class="navbar-brand" href="/"> News </a>
-              <a class="navbar-brand" href="/source"> sources </a>
+
            </div>
            <div class="navbar-collapse collapse">
                <ul class="nav navbar-nav">
@@ -20,3 +21,5 @@
 
        </div>
    </div>
+
+<script src="{{url_for('static',filename='js/logic.js')}}"></script>

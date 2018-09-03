@@ -7,8 +7,10 @@
         {% else %}
         <title> news</title>
         {% endif %}
-        <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}"></link>
 
+        <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}"/>
+
+         <header class="intro-header" style="background-image: url({{ url_for('static', filename='images/back.jpeg') }})">
 
               <!-- sources-->
   <div class="container-fluid">
@@ -18,5 +20,7 @@
                 {{macro.displaySourcesList(sources)}}
 
 </div>
+
+<script src="{{url_for('static',filename='js/logic.js')}}"></script>
 
         {% endblock %}

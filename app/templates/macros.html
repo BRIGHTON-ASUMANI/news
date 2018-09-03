@@ -8,12 +8,12 @@
 
 <div classs='row'>
     {% for article in article_list %}
-<div class="col-md-4" id='line'>
-<h1>{{ article.title}}</h1>
-<h1>{{ article.author}}</h1>
+<div class="col-md-4" id='line' style="border:thin;border:solid">
+<h3>{{ article.title}}</h3>
         <img  src="{{article.urlToImage}}" class="img-responsive img-thumbnail ImageBorder" width="300" height="300" >
-
-
+<h2>{{ article.description}}</h2> posted by <h3>{{ article.author}}</h3>
+<a href='{{ article.url}}'><button type="button" class="btn btn-outline-info">Read more</button></a>
+</br>
 
 
 
@@ -27,19 +27,21 @@
 
 
 {% macro displaySourcesList(source_list) %}
-<div class="container-fluid">
+<div class="container-fluid"  >
 <div classs='row'>
     {% for source in source_list %}
-<div class="col-md-4" id='line'  style='margin: 3px;'>
+<div class="col-md-4" id='line'>
 <div class='row'>
-    <div class="thumbnail">
+    <div class="thumbnail"  style='background-color: black;'>
 
 <h1><font face="verdana" color="Red">{{ source.name}}</h1>
- <h1><font face="verdana" color="Red">{{ source.description}}</h1> 
-<a href='{{ source.url}}'><button type="button" class="btn btn-outline-info">visit site</button></a>&nbsp; &nbsp;
-<a href="/source/{{source.id}}" ><button type="button" class="btn btn-outline-info">Top-headlines</button></a>
+</hr>
+ <h3><font face="verdana" color="#87FF2A">{{ source.description}}</h3>
+<a href='{{ source.url}}'><button type="button" class="btn btn-outline-info" color="green">visit site</button></a>&nbsp; &nbsp;
+<a href="/source/{{source.id}}" ><button type="button" class="btn btn-outline-info" color="red">Top-headlines</button></a>
 <!-- <h1><font face="verdana" color="Red">{{ source.language}}</h1>
 <h1><font face="verdana" color="Red">{{ source.country}}</h1> -->
+
 
         <!-- <div class="btn-group toolTipgroup">
           <a class="btn" href="#" data-placement="top" data-original-title="do you like?"><i class="icon-thumbs-up"></i></a>
@@ -59,5 +61,6 @@
 
 
 {% endmacro %}
+<script src="{{url_for('static',filename='js/logic.js')}}"></script>
 
 </body>
