@@ -1,10 +1,11 @@
 
+
 <body>
 <!-- <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}"></link> -->
 
 {% macro displayArticlesList(article_list) %}
 
-<div class="container-fluid">
+<div class="container">
 
 <div classs='row'>
     {% for article in article_list %}
@@ -28,15 +29,15 @@
 
 
 {% macro displaySourcesList(source_list) %}
-<div class="container-fluid">
+<div class="container">
 <div classs='row'>
     {% for source in source_list %}
 <div class="col-md-4" id='line'>
 <div class='row'>
     <div class="thumbnail">
 
-<h3><font face="verdana" >{{ source.name}}</h3>
- <h4><font face="verdana">{{ source.description}}</h4>
+<h2><font face="verdana" >{{ source.name}}</h2>
+ <h3><font face="verdana">{{ source.description}}</h3>
 <a href='{{ source.url}}'><button type="button" class="btn btn-outline-info">visit site</button></a>&nbsp; &nbsp;
 <a href="/source/{{source.id}}" ><button type="button" class="btn btn-outline-info">Top-headlines</button></a>
 <!-- <h1><font face="verdana" color="Red">{{ source.language}}</h1>
