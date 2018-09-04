@@ -24,7 +24,7 @@ def index():
     science = get_categories('science')
     # print(get_sources)
     title = 'news'
-    return render_template('index.html', title = title,articles = articles,sports = sports,business = business,general = general,health = health, ports = sports,technology = technology,science = science)
+    return render_template('index.html', title = title,articles = articles,sports = sports,business = business,general = general,health = health, technology = technology,science = science)
 
 @main.route('/source/<src>')
 def source(src):

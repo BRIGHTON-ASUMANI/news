@@ -7,28 +7,28 @@
         {% else %}
         <title> news</title>
         {% endif %}
-         <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}"></link>
+         
 
 
 
               <!-- sources-->
   <div class="container-fluid">
-<h1 class='font-family'>General</h1>
+<h1 >General</h1>
                 {{macro.displaySourcesList(general)}}
-<h1 class='font-family'>Business</h1>
+<h1>Business</h1>
                 {{macro.displaySourcesList(business)}}
-<h1 class='font-family'>Sports</h1>
+<h1>Sports</h1>
 
                 {{macro.displaySourcesList(sports)}}
-<h1 class='font-family'>Technology</h1>
+<h1>Technology</h1>
 
                 {{macro.displaySourcesList(technology)}}
-<h1 class='font-family'>Science</h1>
+<h1>Science</h1>
                 {{macro.displaySourcesList(science)}}
 
-<h1 class='font-family'>Health</h1>
+<h1>Health</h1>
         {{macro.displaySourcesList(health)}}
-<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
 </div>
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
 <script src="{{url_for('static',filename='js/logic.js')}}"></script>
         {% endblock %}
