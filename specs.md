@@ -8,6 +8,11 @@
 7. Heroku CLI pages [HEROKU CLI](https://devcenter.heroku.com/articles/heroku-cli)
 8. virtual environment installing ***sudo apt-get install pytho3.6-venv***
 9. Gunicorn this helps in hosting our application to Heroku ***python3.6 -m  pip install gunicorn***
+10. Two base urls used in the request:
+            * CATEGORY_BASE_URL ='https://newsapi.org/v2/sources?language=en&category={}&apiKey={}'
+            * NEWS_API_BASE_URL ='https://newsapi.org/v2/{}?apiKey={}&language=en'
+
+
 
 **__FEATURES__**
 1. User is able to read latest news headlines... including the top headlines in each source
