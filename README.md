@@ -38,3 +38,10 @@
   > **_d:_** displays your saved credentials account and its password
 
 ***
+### __DEPLOYMENT TO HEROKU__
+1. heroku create <name-of-app>
+2. heroku config:set MOVIE_API_KEY=<YOUR MOVIE API>
+3. heroku config:set SECRET_KEY=<YOUR SECRET KEY>
+4. git add .
+5. git commit -m "deployment to heroku"
+6. git push heroku master
